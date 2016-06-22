@@ -63,7 +63,9 @@ public class FlightController {
     	
     	// Popola la seconda tendina con gli aeroporti raggiungibili
     	List<Airport> reachedAirports = model.getReachedAirports(airline) ;
+    	//Prima pulisco il menu a tendina...
     	boxAirport.getItems().clear();
+    	//...e poi lo popolo con i nuovi aeroporti
     	boxAirport.getItems().addAll(reachedAirports);
     	
     	// Costruisci il grafo

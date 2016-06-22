@@ -1,5 +1,10 @@
 package it.polito.tdp.flight.model;
-
+/*
+ * Java Bean creato per comodità in modo da avere una classe contenente tutte le info che dovevo restituire
+ * con il metodo getDestinations() del model, il quale doveva restituirmi l' elenco di Aeroporti raggiungibili
+ * da un dato aeroporto di partenza assegnato insieme con le relative distanze in base alle tratte possibili (e
+ * non le distanze in linea d'aria)
+ */
 public class AirportDistance {
 	
 	private Airport airport ;

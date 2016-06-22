@@ -99,6 +99,10 @@ public class FlightDAO {
 	}
 
 	public List<Integer> getReachedAirportsID(Airline myAirline) {
+		/*
+		 * come query ho usato "select distinct AirportId from ports" con ports una tabella materializzata.
+		 * Volendo potevo anche fare "select AirportId from Airports where AirportId IN(...) OR AirportId IN(...)
+		 */
 		String sql = "select distinct AirportId from ( " + 
 				"select distinct r1.Source_airport_ID as AirportId " + 
 				"from route r1 " + 
