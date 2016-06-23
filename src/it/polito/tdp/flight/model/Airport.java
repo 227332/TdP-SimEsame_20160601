@@ -29,6 +29,12 @@ public class Airport {
 		this.dst = dst;
 		this.tz = tz;
 	}
+	
+	//questo costruttore mi serve per creare oggetti nel dao uguali in id a quelli che ho già
+	//in modo da cercarne la posizione nella lista
+	public Airport(int id){
+		airportId=id;
+	}
 
 	public int getAirportId() {
 		return airportId;
@@ -117,6 +123,34 @@ public class Airport {
 	public void setTz(String tz) {
 		this.tz = tz;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + airportId;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Airport other = (Airport) obj;
+		if (airportId != other.airportId)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Airport [airportId=" + airportId + ", name=" + name + "]";
+	}
+	
 	
 	
 
